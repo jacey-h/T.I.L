@@ -1,8 +1,5 @@
 # 강화학습 실습
 
-복습: No
-작성일시: 2022년 5월 31일 오전 7:33
-
 # Train PPO Agent for Automatic Parking Valet
 
 주차장   
