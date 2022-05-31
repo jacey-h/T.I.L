@@ -11,7 +11,8 @@ Environment(환경)이 Agent에게 특정 상황(state)을 주면
 
 이러한 과정으로 Agent는 Environment와 상호작용을 하며 reward를 많이 취할 수 있는 action들을 학습을 하는 것
 
-### 강화학습 알고리즘의 분류
+### 강화학습 알고리즘의 분류    
+![image](https://user-images.githubusercontent.com/81483791/171120444-525a27c0-1bcc-4e62-8ca6-f7d6704feef8.png)
 
 **Policy**
 Agent의 행동 패턴 (state에서 어떤 action을 취할지)
@@ -30,7 +31,8 @@ environment(환경)의 다음 state와 reward가 어떨지에 대한 agent의 �
 - State model :
 - Reward model :
 
-### 강화학습 알고리즘의 분류
+### 강화학습 알고리즘의 분류    
+![image](https://user-images.githubusercontent.com/81483791/171120560-b0c31cd8-0f59-4d7b-be56-9ac0e25d5dbf.png)
 
 - Policy-Based
  Value function이 없이 policy만을 학습하는 agent
@@ -91,13 +93,21 @@ TRPO의 data efficiency와 robustness를 유지하면서도
 1. Clipped Surrogate Objective
 2. Adaptive KL Penalty Coefficient
 
-### Proximal Policy Optimization (PPO)
+### Proximal Policy Optimization (PPO)    
+![image](https://user-images.githubusercontent.com/81483791/171120644-ca374a6f-faf3-42e4-84a9-e8180f283fdc.png)    
+![image](https://user-images.githubusercontent.com/81483791/171120700-108b2ba7-ae6b-487c-873b-bea9f797aa11.png)
 
-1. Clipped Surrogate Objective
+1. Clipped Surrogate Objective     
+![image](https://user-images.githubusercontent.com/81483791/171120749-3cdf540e-9437-4013-b9e6-0472ef313de3.png)
 
-2. Adaptive KL Penalty Coefficient
+2. Adaptive KL Penalty Coefficient     
+![image](https://user-images.githubusercontent.com/81483791/171120787-3a4927ca-a9b6-4e17-a27f-352810c9ae56.png)
 
-Aracde Learning Environment에서 다른 알고리즘과 비교
+성능 비교    
+![image](https://user-images.githubusercontent.com/81483791/171120907-46811e87-1b17-480e-97bc-42e27bf7c6fe.png)
 
-49개의 Atari 게임에서 PPO가 가장 많이 빠르게 학습됨 
+Aracde Learning Environment에서 다른 알고리즘과 비교    
+![image](https://user-images.githubusercontent.com/81483791/171120967-7b17aad5-44af-46de-b1ca-a18148563be0.png)
+
+49개의 Atari 게임에서 PPO가 가장 많이 빠르게 학습됨 
 그러나 마지막 에피소드에 대해서 즉 정확도에서는 ACER가 더 뛰어남
