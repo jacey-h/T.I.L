@@ -5,7 +5,8 @@
 
 # Train PPO Agent for Automatic Parking Valet
 
-주차장
+주차장   
+![image](https://user-images.githubusercontent.com/81483791/171119741-928e8a99-c2be-4979-9025-99fdcc8f8d16.png)
 
 차량의 목표 포즈
 x = 47.7500
@@ -14,24 +15,28 @@ y = 4.9000
 
 센서
 
-- 카메라
+- 카메라    
+![image](https://user-images.githubusercontent.com/81483791/171119793-29bba40e-32a6-4860-b912-614d21b3b5e0.png)
 
 d : 주차위치까지의 거리
 φ : 주차위치에 대한 각도
 
-- 라이다
+- 라이다    
+![image](https://user-images.githubusercontent.com/81483791/171119835-8e6d4c5a-583b-40ca-9d56-8cf0011c122c.png)
 
 12개의 라이다 선분 (최대 6m)
 
-### Simulink 모델
+### Simulink 모델    
+![image](https://user-images.githubusercontent.com/81483791/171119910-2d6442da-be70-4e21-8a59-6478da0fb28f.png)
 
-Enabled Subsystem 불록으로 
+Enabled Subsystem 불록으로 
 차량이 빈 자리를 탐색할  때는 MPC controller
 주차 모드일 때는 RL controller
 
-**MPC (Model Predictive Control) :**
+**MPC (Model Predictive Control) :**     
+![image](https://user-images.githubusercontent.com/81483791/171119983-797e4e23-43b3-49da-ae09-8f9d5ef232b4.png)
 
-모델예측제어는 미래 출력치를 예측하고 이를 
+모델예측제어는 미래 출력치를 예측하고 이를 
 최적화하여 얻어진 제어 입력을 사용하는 제어 기법
 
 ### Actor - Critic
@@ -177,17 +182,20 @@ else
 end
 ```
 
-![변경후1.PNG](%E1%84%80%E1%85%A1%E1%86%BC%E1%84%92%E1%85%AA%E1%84%92%E1%85%A1%E1%86%A8%E1%84%89%E1%85%B3%E1%86%B8%20%E1%84%89%E1%85%B5%E1%86%AF%E1%84%89%E1%85%B3%E1%86%B8%20d6a36a36a0244e27aba51c2a24536dfd/%EB%B3%80%EA%B2%BD%ED%9B%841.png)
+![변경후1](https://user-images.githubusercontent.com/81483791/171120074-5518f35e-ec39-4aad-aa5e-6c1627cf2e40.png)
+
 
 직접 훈련시킨 결과 우리가 원하는 7번 자리에 맞게 들어갈때 가장 높은 리워드를 받은 것을 확인할 수 있다.
 
-![변경1 한시간 학습.PNG](%E1%84%80%E1%85%A1%E1%86%BC%E1%84%92%E1%85%AA%E1%84%92%E1%85%A1%E1%86%A8%E1%84%89%E1%85%B3%E1%86%B8%20%E1%84%89%E1%85%B5%E1%86%AF%E1%84%89%E1%85%B3%E1%86%B8%20d6a36a36a0244e27aba51c2a24536dfd/%EB%B3%80%EA%B2%BD1_%ED%95%9C%EC%8B%9C%EA%B0%84_%ED%95%99%EC%8A%B5.png)
+![변경1_한시간_학습](https://user-images.githubusercontent.com/81483791/171120101-a595f47b-9676-45f1-b288-d7dd6a4341a7.png)
+
 
 한시간 가량 학습을 진행했지만 평균 보상이 올라가지 않고 그대로 유지 
 
 잘못된 결과 → 다시 변경할 필요있음
 
-[변경1일때 학습.mp4](%E1%84%80%E1%85%A1%E1%86%BC%E1%84%92%E1%85%AA%E1%84%92%E1%85%A1%E1%86%A8%E1%84%89%E1%85%B3%E1%86%B8%20%E1%84%89%E1%85%B5%E1%86%AF%E1%84%89%E1%85%B3%E1%86%B8%20d6a36a36a0244e27aba51c2a24536dfd/%EB%B3%80%EA%B2%BD1%EC%9D%BC%EB%95%8C_%ED%95%99%EC%8A%B5.mp4)
+https://user-images.githubusercontent.com/81483791/171120116-e604cf95-c70b-4ed6-92ce-d8198c2c9d1f.mp4
+
 
 1. 변화2
 
@@ -245,7 +253,8 @@ else
 end
 ```
 
-![변경후2.PNG](%E1%84%80%E1%85%A1%E1%86%BC%E1%84%92%E1%85%AA%E1%84%92%E1%85%A1%E1%86%A8%E1%84%89%E1%85%B3%E1%86%B8%20%E1%84%89%E1%85%B5%E1%86%AF%E1%84%89%E1%85%B3%E1%86%B8%20d6a36a36a0244e27aba51c2a24536dfd/%EB%B3%80%EA%B2%BD%ED%9B%842.png)
+![변경후2](https://user-images.githubusercontent.com/81483791/171120151-9bca5755-3acb-4802-b2d8-c5b5d3f2fca1.png)
+
 
 학습결과 평균 보상값이 크게 상승하였고 제대로 학습이 이루어졌다
 
@@ -271,4 +280,4 @@ agent = rlPPOAgent(actor,critic,agentOpts);
 
 값만 살짝 바꿔줌
 
-![변경3.PNG](%E1%84%80%E1%85%A1%E1%86%BC%E1%84%92%E1%85%AA%E1%84%92%E1%85%A1%E1%86%A8%E1%84%89%E1%85%B3%E1%86%B8%20%E1%84%89%E1%85%B5%E1%86%AF%E1%84%89%E1%85%B3%E1%86%B8%20d6a36a36a0244e27aba51c2a24536dfd/%EB%B3%80%EA%B2%BD3.png)
+![변경3](https://user-images.githubusercontent.com/81483791/171120173-a75de85e-6a5e-4773-af20-9a552d52ad3d.png)
